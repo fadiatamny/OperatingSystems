@@ -10,7 +10,7 @@
 unsigned int countSpaces(const std::string &s);                    // counts white spaces in a string
 char **convert(const std::string &s, const std::string &procname); // converts from a string to a array of strings using space seperation
 
-int main(int argc, char *argv[], char *envp[])
+int main(int argc, char *argv[])
 {
     std::string input;
     std::string tmp;
@@ -57,7 +57,7 @@ int main(int argc, char *argv[], char *envp[])
         if (cpid == 0)
         {
             int x;
-            if (x = execve(procName.c_str(), cargs, envp))
+            if (x = execve(procName.c_str(), cargs, NULL))
             {
                 perror("Execve Error");
                 exit(-1);
